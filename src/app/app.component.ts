@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample-app';
+  str = 'lp';
+
+  constructor() {
+    if (this.str == 'lp') {
+      this.str = 'pg';
+    }
+  }
 }

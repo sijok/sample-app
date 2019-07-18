@@ -1,5 +1,7 @@
 # SampleApp
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ae6f6144dd7e4ad4b56e308e936297b3)](https://app.codacy.com/app/sijok/sample-app?utm_source=github.com&utm_medium=referral&utm_content=sijok/sample-app&utm_campaign=Badge_Grade_Settings)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 
 ## Development server

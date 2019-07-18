@@ -11,6 +11,7 @@ export class AppComponent {
 
   constructor() {
     if (this.str == 'lp') {
+      debugger;
       this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';
     }
   }

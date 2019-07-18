@@ -1,0 +1,16 @@
+version: 1
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+
+    steps:
+      - checkout
+
+      - run:
+          name: Greetings from Sample App
+          command: echo Sample App.
+
+      - run:
+          name: Print the Current Time
+          command: date

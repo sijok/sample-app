@@ -10,9 +10,18 @@ export class AppComponent {
   str = 'lp';
 
   constructor() {
-    if (this.str == 'lp') {
-      debugger;
-      this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';
+    if (this.str === 'lp') {
+      this.str = 'pg';
+      this.str = 'pg';
+      this.str = 'pg';
+      this.str = 'pg';
+      this.str = 'pg';
+      this.str = 'pg';
+      this.str = 'pg';
+      this.str = 'pg';
+      this.str = 'pg';
+      this.str = 'pg';
+      this.str = 'pg';
     }
   }
 }

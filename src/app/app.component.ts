@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor() {
     if (this.str == 'lp') {
-      this.str = 'pg';
+      this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';this.str = 'pg';
     }
   }
 }

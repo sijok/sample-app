@@ -19,7 +19,6 @@ jobs:
       - build
     docker:
       - image: circleci/node:8.9.2
-      - image: mongo:3.4.4-jessie
     steps:
       - checkout
       - run: npm install

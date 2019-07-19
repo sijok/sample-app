@@ -22,7 +22,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm install -g karma-cli
+      - run: sudo npm install -g karma
       - run: mkdir ~/junit
       - run:
           command: karma start ./karma.conf.js

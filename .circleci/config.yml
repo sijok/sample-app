@@ -23,9 +23,9 @@ jobs:
       - checkout
       - run: npm install
       - run: sudo npm install -g karma
-      - run: sudo npm install karma-phantomjs-launcher
-      - run: sudo npm install karma-jasmine
-      - run: sudo npm install karma-junit-reporter 
+      - run: sudo npm install karma-phantomjs-launcher --save-dev
+      - run: sudo npm install karma-jasmine --save-dev
+      - run: sudo npm install karma-junit-reporter --save-dev
       - run: mkdir ~/junit
       - run:
           command: karma start karma.conf.js

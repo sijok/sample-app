@@ -1,4 +1,4 @@
-version: 1
+version: 2
 jobs:
   build:
     docker:
@@ -15,18 +15,20 @@ jobs:
           name: Print the Current Time
           command: date
   test:
+    docker:
+      - image: circleci/node:4.8.2-jessie
+      - image: mongo:3.4.4-jessie
     steps:
       - checkout
+      - run: npm install
+      - run: mkdir ~/junit
       - run:
-          name: Test
-          command: ng test
-      - run:
-          name: Generate code coverage
-          command: './node_modules/.bin/nyc report --reporter=text-lcov'
+          command: karma start ./karma.conf.js
+          environment:
+            JUNIT_REPORT_PATH: ./junit/
+            JUNIT_REPORT_NAME: test-results.xml
+          when: always  
+      - store_test_results:
+          path: ./junit
       - store_artifacts:
-          path: test-results.xml
-          prefix: tests
-      - store_artifacts:
-          path: coverage
-          prefix: coverage
-
+          path: ./junit

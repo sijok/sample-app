@@ -22,7 +22,7 @@ jobs:
       - checkout
       - run:
           name: Test
-          command: npm test
+          command: ng test
       - run:
           name: Generate code coverage
           command: './node_modules/.bin/nyc report --reporter=text-lcov'

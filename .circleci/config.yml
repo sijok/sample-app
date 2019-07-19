@@ -21,9 +21,6 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run test
-      - run:
-          name: Test
-          command: ng test
 workflows:
   version: 2
   workflow:

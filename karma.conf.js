@@ -6,9 +6,15 @@
 //         useBrowserName: false
 //     },
 // };
+
 module.exports = function(config) {
     config.set({
         reporters: ['junit'],
+        plugins : [
+            'karma-phantomjs-launcher',
+            'karma-jasmine',
+            'karma-junit-reporter'
+        ],
         junitReporter: {
             outputDir: process.env.JUNIT_REPORT_PATH,
             outputFile: process.env.JUNIT_REPORT_NAME,

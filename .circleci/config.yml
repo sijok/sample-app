@@ -19,6 +19,7 @@ jobs:
       - image: circleci/node:8.9.2
     steps:
       - checkout
+      - run: npm install
       - run:
           name: Test
           command: ng test

@@ -1,4 +1,4 @@
-config = {
+exports.config = {
     reporters: ['junit'],
     junitReporter: {
         outputDir: process.env.JUNIT_REPORT_PATH,

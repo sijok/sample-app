@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm link @angular/cli 
+      - run: npm run test
       - run:
           name: Test
           command: ng test

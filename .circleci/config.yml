@@ -1,31 +1,17 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/my-project
     docker:
-      - image: debian:stretch
-
+      - image: circleci/node:8-browsers
     steps:
       - checkout
-
-      - run:
-          name: Greetings from Sample App
-          command: echo Sample App.
-
-      - run:
-          name: Print the Current Time
-          command: date
-  test:
-    docker:
-      - image: circleci/node:10.16.0
-    steps:
-      - checkout
+      - restore_cache:
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm install
-      - run: sudo npm install -g karma
-      - run: sudo npm install karma-spec-reporter
-      - run: npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
-workflows:
-  version: 2
-  workflow:
-    jobs:
-    - build
-    - test
+      - save_cache:
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
+      - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js

@@ -22,7 +22,7 @@ jobs:
       - run: npm install
       - run: sudo npm install -g karma
       - run: sudo npm install karma-spec-reporter
-      - run: npm run test -karma-config karma.conf.js
+      - run: ng test -karma-config karma.conf.js
 workflows:
   version: 2
   workflow:

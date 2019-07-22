@@ -9,17 +9,6 @@ module.exports = function (config) {
         require('karma-coverage-istanbul-reporter'),
         require('@angular-devkit/build-angular/plugins/karma')
       ],
-      client: {
-        clearContext: false
-      },
-      coverageIstanbulReporter: {
-        dir: require('path').join(__dirname, '../coverage/example'),
-        reports: ['html', 'lcovonly', 'text-summary'],
-        fixWebpackSourcePaths: true
-      },
-      reporters: ['progress', 'kjhtml'],
-      colors: true,
-      logLevel: config.LOG_INFO,
       autoWatch: true,
       // updated
       browsers: ['ChromeHeadless'],

@@ -22,8 +22,7 @@ jobs:
       - run: npm install
       - run: sudo npm install -g karma
       - run: sudo npm install karma-spec-reporter
-      - run: sudo npm link @angular/cli
-      - run: ng test -karma-config karma.conf.js
+      - run: npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
 workflows:
   version: 2
   workflow:

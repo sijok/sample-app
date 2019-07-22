@@ -20,7 +20,6 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: sudo npm install -g karma-cli
       - run: sudo npm install karma-spec-reporter
       - run: karma start karma.conf.js
 workflows:

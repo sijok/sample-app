@@ -2,7 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fa4da2f96c784c3c9c4d1aed626c4f0f)](https://app.codacy.com/app/sijok/sample-app?utm_source=github.com&utm_medium=referral&utm_content=sijok/sample-app&utm_campaign=Badge_Grade_Settings)
 
-[![CircleCI](https://circleci.com/gh/sijok/sample-app/tree/master.svg?style=svg)](https://circleci.com/gh/sijok/sample-app/tree/master)
+[![CircleCI](https://circleci.com/gh/sijok/sample-app.svg?style=shield)](https://circleci.com/gh/sijok/sample-app)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 

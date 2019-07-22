@@ -1,45 +1,16 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/my-project
     docker:
-      - image: debian:stretch
-
+      - image: circleci/node:8-browsers
     steps:
       - checkout
-
-      - run:
-          name: Greetings from Sample App
-          command: echo Sample App.
-
-      - run:
-          name: Print the Current Time
-          command: date
-  test:
-    requires:
-      - build
-    docker:
-      - image: circleci/node:8.9.2
-    steps:
-      - checkout
+      - restore_cache:
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm install
-      - run: sudo npm install -g karma
-      - run: sudo npm install karma-phantomjs-launcher --save-dev
-      - run: sudo npm install karma-jasmine --save-dev
-      - run: sudo npm install karma-junit-reporter --save-dev
-      - run: mkdir ~/junit
-      - run:
-          command: karma start karma.conf.js
-          environment:
-            JUNIT_REPORT_PATH: ./junit/
-            JUNIT_REPORT_NAME: test-results.xml
-          when: always  
-      - store_test_results:
-          path: ./junit
-      - store_artifacts:
-          path: ./junit
-workflows:
-  version: 2
-  workflow:
-    jobs:
-    - build
-    - test
+      - save_cache:
+          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - "node_modules"
+      - run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
